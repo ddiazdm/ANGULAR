@@ -1,0 +1,31 @@
+
+<div class="row w-100 p-0 m-0">
+    <p-toast [position]="'bottom-right'"></p-toast>
+
+
+        <!-- Header -->
+        <app-header class="w-100"
+            [isSidenavOpen]="isSidenavOpen"
+            (sidenavToogleButtonChangeEvent)="sidenavToogleButtonChangeEvent($event)">
+        </app-header>
+<h1>wsdcwcw</h1>
+
+                <mat-sidenav-container class="h-100 w-100 sidenav-container p-0" autosize [hasBackdrop]="false" >
+
+                    <mat-sidenav  class="sidenav-menu" mode="side" [opened]="isSidenavOpen">
+                        <app-sidenav-menu  [menuPath]="menuPath"></app-sidenav-menu>
+                    </mat-sidenav>
+
+                    <mat-sidenav-content class="sidenav-content w-100 p-0 ">
+
+                        <router-outlet></router-outlet>
+                    </mat-sidenav-content>
+
+                </mat-sidenav-container>
+
+
+
+
+
+
+</div>

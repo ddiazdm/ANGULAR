@@ -1,0 +1,61 @@
+
+<div *ngIf="menu" class="d-flex flex-column justify-content-start align-items-start w-100 h-100">
+
+	<div class="d-flex flex-column justify-content-start align-items-start w-100">
+
+		<mat-nav-list class="w-100 p-0 mt-5">
+
+			<mat-expansion-panel *ngFor="let item of menu" hideToggle [expanded]="item.isOpened"
+				(opened)="item.isOpened = true" (closed)="item.isOpened = false">
+
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+
+						<div class="d-flex flex-row justify-content-start align-items-center w-100 gap-1" hideToggle [routerLink]="item.link">
+							<div *ngIf="item.childrens?.length !=0">
+								<i *ngIf="item.isOpened==false" class="pi pi-chevron-down "></i>
+								<i *ngIf="item.isOpened==true" class="pi pi-chevron-up "></i>
+							</div>
+							<mat-nav-list class="fw-bolder flex-grow-1 text-white ml-1  ">
+								{{item.text}}
+							</mat-nav-list>
+					</div>
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+
+
+				<mat-expansion-panel *ngFor="let children of item.childrens" [routerLink]="children.link" hideToggle [expanded]="children.isOpened">
+
+				<mat-expansion-panel-header>
+						<mat-panel-title>
+							<div *ngIf="children.childrens.length!=0"  (click)="$event.stopPropagation()">
+								<i *ngIf="children.isOpened==false" class="pi pi-chevron-down" (click)="children.isOpened = true"></i>
+								<i *ngIf="children.isOpened==true" class="pi pi-chevron-up "(click)="children.isOpened = false" ></i>
+							</div>
+							<mat-nav-list class="fw-bolder flex-grow-1 text-white ml-3 " (click)="children.isOpened=false">
+								{{children.text}}
+							</mat-nav-list>
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+			<div *ngIf="children.isOpened">
+				<mat-expansion-panel *ngFor="let childrens_submenu of children.childrens"  (click)="$event.stopPropagation()" hideToggle [routerLink]="childrens_submenu.route">
+					<mat-expansion-panel-header>
+						<mat-panel-title>
+							<mat-nav-list class="fw-bolder flex-grow-1 text-white ml-5 ">
+								{{childrens_submenu.text}}
+							</mat-nav-list>
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+
+				</mat-expansion-panel>
+			</div>
+
+			</mat-expansion-panel>
+
+
+		</mat-expansion-panel>
+		</mat-nav-list>
+
+	</div>
+
+</div>

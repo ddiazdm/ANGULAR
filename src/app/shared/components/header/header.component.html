@@ -1,0 +1,22 @@
+<div class=" row header">
+  <div class="d-flex flex-row md:align-items-center md:justify-content-between md:flex-row">
+      <div class="d-flex flex-row">
+          <div class="align-self-end">
+              <button mat-icon-button (click)="toogleSidenav()" class="align-self-left">
+                  <fa-icon *ngIf="!isSidenavOpen" [icon]="['fas', 'bars']" class="header-icon"></fa-icon>
+                  <fa-icon *ngIf="isSidenavOpen" [icon]="['fas', 'bars']" class="header-icon"></fa-icon>
+              </button>
+          </div>
+          <div class="flex align-items-center">
+
+              <!-- <img src="../../../../assets/logo/ignis-logo.svg" alt="Image" width="50" height="50"> -->
+
+          </div>
+      </div>
+
+      <div class="font-bold text-3xl title">Art&Porta</div>
+      <div class=" md:mt-0">
+          <!-- <app-logout></app-logout> -->
+      </div>
+  </div>
+</div>
