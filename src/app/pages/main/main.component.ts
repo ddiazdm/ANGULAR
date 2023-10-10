@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -7,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  mode: MatDrawerMode = 'side';
 
   public isSidenavOpen: boolean = true;
   public isAuth: boolean = false

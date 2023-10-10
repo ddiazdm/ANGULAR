@@ -1,4 +1,4 @@
-[
+export const MENU_ITEMS =[
   {
       "text": "Index",
       "icon": null,
@@ -34,4 +34,4 @@
       "link": "/carrito",
       "childrens": []
   }
-]
+];

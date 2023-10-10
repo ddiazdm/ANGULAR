@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SidenavMenuItem, SidenavSubMenuItem } from '../../models/sidenav-menu.model';
 import { HttpClient } from '@angular/common/http';
+import { MENU_ITEMS } from 'src/app/static/data/sidenav-menu';
 
 @Component({
   selector: 'app-sidenav-menu',
@@ -11,6 +12,7 @@ export class SidenavMenuComponent implements OnInit {
 
   @Input() menuPath: string = ""
 
+  menuItems = MENU_ITEMS
   public menu: SidenavMenuItem[] = [];
   public submenu: SidenavSubMenuItem[] = [];
 
